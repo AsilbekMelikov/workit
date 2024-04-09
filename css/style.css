@@ -222,6 +222,106 @@ img {
   margin-bottom: 50px;
 }
 
+/* FEATURES */
+
+.features {
+  padding-top: 255px;
+  padding-bottom: 170px;
+  background-color: var(--ghost-white);
+}
+
+.features__list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: features-list;
+}
+.features__item {
+  width: calc((100% - 52px) / 3);
+  counter-increment: features-list;
+}
+
+/* FEATURE */
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.feature::before {
+  flex-shrink: 0;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--davys-grey);
+  margin-bottom: 56px;
+  border-radius: 50%;
+  font-style: 24px;
+  line-height: 40px;
+  font-family: var(--heading-font-family);
+  content: counter(features-list);
+  text-align: center;
+}
+
+.features__title {
+  margin-top: 0;
+  margin-bottom: 28px;
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  line-height: 40px;
+}
+.features__description {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .features {
+    padding-top: 200px;
+    padding-bottom: 100px;
+  }
+
+  .features__list {
+    max-width: 575px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+  }
+  .features__item {
+    width: 100%;
+  }
+  .features__item:not(:last-child) {
+    margin-bottom: 48px;
+  }
+
+  .feature {
+    flex-direction: row;
+    text-align: start;
+  }
+  .feature::before {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0;
+    margin-right: 32px;
+  }
+
+  .features__title {
+    margin-bottom: 16px;
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .features__description {
+    font-style: 16px;
+    line-height: 28px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .site-header-hero-wrapper {
     padding-top: 36px;
@@ -243,6 +343,8 @@ img {
     padding-right: 16px;
   }
 
+  /* SITE HEADER AND HERO */
+
   .site-header__container {
     margin-bottom: 64px;
   }
@@ -254,5 +356,26 @@ img {
 
   .hero__button {
     margin-bottom: 60px;
+  }
+
+  /* FEATURES */
+
+  .features {
+    padding-top: 155px;
+    padding-bottom: 70px;
+  }
+
+  .features__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  .feature {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature::before {
+    margin-right: 0;
+    margin-bottom: 24px;
   }
 }
